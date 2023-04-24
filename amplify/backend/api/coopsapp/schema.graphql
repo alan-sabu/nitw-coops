@@ -1,0 +1,27 @@
+type CartModel @model @auth(rules: [{allow: public}, {allow: private}]) {
+  id: ID!
+  product_name: String!
+  product_price: Float!
+  product_qty: Int!
+  product_subtotal: Float
+  email: String
+}
+
+type PurchaseModel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  email: String
+  roll: ID!
+  room: String!
+  hostel: String!
+  subtotal: Float
+  total: Float
+}
+
+type ProductModel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  price: Float!
+  desciption: String
+  imageUrl: String
+}
+ 
